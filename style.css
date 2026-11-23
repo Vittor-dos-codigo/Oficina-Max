@@ -1,0 +1,140 @@
+/* Loja de Peças - estilos */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #f2f4f7;
+  color: #1c2430;
+}
+
+.topo {
+  background: #14213d;
+  color: #fff;
+  padding: 28px 20px;
+}
+
+.topo-conteudo { max-width: 1100px; margin: 0 auto; }
+.topo h1 { margin: 0 0 6px; font-size: 28px; }
+.topo p { margin: 0; opacity: 0.85; }
+
+.conteudo { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+.cartao {
+  background: #fff;
+  border: 1px solid #e2e6ec;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+h2 { margin-top: 0; font-size: 20px; }
+
+.linha-cliente { display: flex; gap: 10px; flex-wrap: wrap; }
+
+input[type="text"], input[type="number"] {
+  padding: 10px 12px;
+  border: 1px solid #c8cfda;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+input[type="text"] { flex: 1; min-width: 200px; }
+
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #fca311;
+  color: #14213d;
+}
+
+button:hover { filter: brightness(0.95); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.botao-secundario { background: #e2e6ec; color: #1c2430; }
+.botao-principal { width: 100%; padding: 13px; font-size: 16px; }
+
+.mensagem { min-height: 1.2em; margin: 10px 0 0; color: #4a5568; }
+.mensagem.erro { color: #b42318; font-weight: 600; }
+.dica { color: #6b7280; font-size: 13px; }
+
+.escondido { display: none; }
+
+/* Catálogo + carrinho lado a lado */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+  align-items: start;
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.produto {
+  background: #fff;
+  border: 1px solid #e2e6ec;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.produto h3 { margin: 0; font-size: 16px; text-transform: capitalize; }
+.produto .preco { font-size: 20px; font-weight: 700; color: #14213d; }
+.produto .estoque { color: #6b7280; font-size: 13px; margin: 0; }
+.produto .estoque.esgotado { color: #b42318; font-weight: 600; }
+
+.adicionar { display: flex; gap: 8px; margin-top: auto; }
+.adicionar input { width: 70px; }
+.adicionar button { flex: 1; }
+
+/* Carrinho */
+.carrinho { position: sticky; top: 20px; }
+
+.itens-carrinho { list-style: none; padding: 0; margin: 0 0 16px; }
+.itens-carrinho li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eef1f5;
+  text-transform: capitalize;
+}
+.itens-carrinho .vazio { text-transform: none; color: #6b7280; border: none; }
+.itens-carrinho button {
+  background: none;
+  color: #b42318;
+  padding: 4px 8px;
+  font-size: 13px;
+}
+
+.totais { border-top: 2px solid #e2e6ec; padding-top: 12px; }
+.linha-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+.linha-total.total { font-size: 18px; }
+.linha-total.desconto strong { color: #067647; }
+
+.pagamento { border: 1px solid #e2e6ec; border-radius: 8px; margin: 16px 0; padding: 12px; }
+.pagamento label { display: block; padding: 6px 0; cursor: pointer; }
+
+.rodape { text-align: center; color: #6b7280; font-size: 13px; padding: 10px 20px 30px; }
+
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+  .carrinho { position: static; }
+}

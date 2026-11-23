@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja de Peças</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="topo-conteudo">
+      <h1>🔧 Loja de Peças</h1>
+      <p>Peças para sua moto, com preço justo e entrega rápida.</p>
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <section class="cartao" id="secao-cliente">
+      <h2>Quem está comprando?</h2>
+      <div class="linha-cliente">
+        <input type="text" id="nome" placeholder="Digite seu nome" autocomplete="name">
+        <button id="botao-entrar" type="button">Entrar</button>
+      </div>
+      <p class="mensagem" id="mensagem-cliente"></p>
+      <button id="botao-cadastrar" type="button" class="botao-secundario escondido">Cadastrar meu nome</button>
+    </section>
+
+    <div class="layout">
+      <section class="catalogo">
+        <h2>Produtos em estoque</h2>
+        <div class="grade" id="grade-produtos">
+          <p class="carregando">Carregando produtos...</p>
+        </div>
+      </section>
+
+      <aside class="cartao carrinho">
+        <h2>Seu carrinho</h2>
+        <ul class="itens-carrinho" id="itens-carrinho">
+          <li class="vazio">Seu carrinho está vazio.</li>
+        </ul>
+
+        <div class="totais">
+          <div class="linha-total"><span>Subtotal</span><strong id="subtotal">R$ 0,00</strong></div>
+          <div class="linha-total desconto escondido" id="linha-desconto"><span>Desconto (5%)</span><strong id="desconto">- R$ 0,00</strong></div>
+          <div class="linha-total total"><span>Total</span><strong id="total">R$ 0,00</strong></div>
+          <p class="dica" id="dica-desconto">Pix ou dinheiro em compras a partir de R$ 300,00 ganham 5% de desconto.</p>
+        </div>
+
+        <fieldset class="pagamento">
+          <legend>Forma de pagamento</legend>
+          <label><input type="radio" name="pagamento" value="pix"> Pix</label>
+          <label><input type="radio" name="pagamento" value="cartão de crédito"> Cartão de crédito</label>
+          <label><input type="radio" name="pagamento" value="cartão de débito"> Cartão de débito</label>
+          <label><input type="radio" name="pagamento" value="dinheiro"> Dinheiro</label>
+        </fieldset>
+
+        <button id="botao-finalizar" type="button" class="botao-principal" disabled>Finalizar compra</button>
+        <p class="mensagem erro" id="mensagem-erro"></p>
+      </aside>
+    </div>
+
+    <section class="cartao recibo escondido" id="recibo">
+      <h2>✅ Compra finalizada!</h2>
+      <p id="recibo-cliente"></p>
+      <ul class="itens-carrinho" id="recibo-itens"></ul>
+      <div class="totais">
+        <div class="linha-total"><span>Subtotal</span><strong id="recibo-subtotal"></strong></div>
+        <div class="linha-total desconto escondido" id="recibo-linha-desconto"><span>Desconto</span><strong id="recibo-desconto"></strong></div>
+        <div class="linha-total total"><span>Total pago</span><strong id="recibo-total"></strong></div>
+        <div class="linha-total"><span>Pagamento</span><strong id="recibo-pagamento"></strong></div>
+      </div>
+      <p>Obrigado por sua compra!</p>
+      <button id="botao-nova-compra" type="button" class="botao-secundario">Fazer outra compra</button>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Projeto pessoal de teste — sem banco de dados. O estoque volta ao original quando o servidor é reiniciado.</p>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
